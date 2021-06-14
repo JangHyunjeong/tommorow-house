@@ -1,0 +1,98 @@
+/*
+컬럼 갯수, 유닛의 사이즈, 거터 사이즈
+
+* MOBILE ( < 768px ) ---------------------------------
+* fixture(별명 만들기)  ---------- sm
+* # of columns  ------------------ 4
+* gutter  ------------------------ 20px
+* margin ------------------------- 5px
+* container size  ---------------- 100% - (5px * 2)
+
+
+* TABLET ( > 768px ) ---------------------------------
+fixture(별명 만들기)  ------------ md
+* # of columns  ------------------ 12
+* gutter  ------------------------ 20px
+* margin ------------------------- 30px
+* container size  ---------------- 100% - (30px * 2)
+* max-container-size ------------- 960px'
+
+
+* DESKTOP ( > 1024px ) ---------------------------------
+lfixture(별명 만들기)  ----------- lg
+* # of columns  ------------------ 12
+* gutter  ------------------------ 20px
+* unit size ---------------------- 75px
+* margin ------------------------- auto
+* container size  ---------------- 1140px
+* max-container-size ------------- 1140px
+
+*/
+
+$gutter: 20px;
+
+$sm-columns: 4;
+$sm-margin: 5px;
+
+$md-breakpoint: 768px;
+$md-columns: 12;
+$md-margin: 30px;
+$md-max-container: 960px + $md-margin * 2;
+
+$lg-breakpoint: 1200px;
+$lg-columns: 12;
+$lg-unit: 75px;
+$lg-max-container: ($lg-unit + $gutter) * $lg-columns;
+
+//@debug $lg-max-container;
+
+.container {
+  width: 100%;
+  padding: 0 $sm-margin;
+  margin: 0 auto;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  // .col-sm-1, .col-md-1, .col-lg-3,  같은 애들을 가지고오고싶다.
+  [class^='col-'] {
+    padding: 0 $gutter / 2;
+  }
+
+  @for $i from 1 through $sm-columns {
+    //@debug $i;
+    .col-sm-#{$i} {
+      //#{$변수명} - 변수가 가지고있는 값으로 출력
+      //width: $i / $sm-columns * 100%;
+
+      //sass 내장함수는 다음과 같이 사용할수 있다.
+      width: percentage($i / $sm-columns);
+    }
+  }
+
+  @media screen and (min-width: $md-breakpoint) {
+    max-width: $md-max-container;
+    padding: 0 $md-margin;
+
+    @for $i from 1 through $md-columns {
+      //@debug $i;
+      .col-md-#{$i} {
+        width: percentage($i / $md-columns);
+      }
+    }
+  }
+
+  @media screen and (min-width: $lg-breakpoint) {
+    max-width: $lg-max-container;
+    padding: 0;
+
+    @for $i from 1 through $lg-columns {
+      //@debug $i;
+      .col-lg-#{$i} {
+        width: ($lg-unit + $gutter) * $i;
+      }
+    }
+  }
+}
