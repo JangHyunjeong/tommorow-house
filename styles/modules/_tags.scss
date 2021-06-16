@@ -1,0 +1,31 @@
+//placeholer라고 부른다.
+//placehoder랑 mixin은 둘다 반복되는 코드를 사용하지 않겠다.. 하는 시발점은 같다.
+//하지만 사용 용도가 달라요
+//mixin 은 인자를 받을 수있으나(확장성이 높다.)   / 각각 써서줌
+//placehoder는 인자 받을수없다(확장성이 낮다.)  / 연관있는 친구드를 그루핑해서 랜더
+
+%tag-base {
+  //공통스타일
+  @include inline-flexbox;
+  @include text-style(12);
+  height: 20px;
+  padding: 0 6px;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.tag-red {
+  @extend %tag-base;
+  color: $white;
+  background-color: $red;
+}
+.tag-green {
+  @extend %tag-base;
+  color: $white;
+  background-color: $green;
+}
+.tag-gray {
+  @extend %tag-base;
+  color: $secondary;
+  background-color: $border;
+}
