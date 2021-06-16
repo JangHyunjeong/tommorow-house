@@ -1,9 +1,13 @@
 // map = key:value
 $flex-map: (
-    start: flex-start; end: flex-end; between: space-between; around:
-      space-around; stretch: stretch; center: center;,
-  )
-  @function _get-flex-value($key) {
+  start: flex-start,
+  end: flex-end,
+  between: space-between,
+  around: space-around,
+  stretch: stretch,
+  center: center,
+);
+@function _get-flex-value($key) {
   //flex-start  -> start
   //flex-end -> end
 
@@ -16,7 +20,7 @@ $flex-map: (
   //   @if ($key == between) {
   //     @return space-between;
   //   }
-  @return map-get($flex-map.$key);
+  @return map-get($flex-map, $key);
 }
 
 @mixin flexbox($jc: center, $ai: center) {
