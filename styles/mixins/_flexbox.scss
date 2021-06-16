@@ -1,4 +1,4 @@
-// map = key:value
+// 아래 쓴 것은 map = key:value
 $flex-map: (
   start: flex-start,
   end: flex-end,
@@ -7,6 +7,8 @@ $flex-map: (
   stretch: stretch,
   center: center,
 );
+
+// sass 함수
 @function _get-flex-value($key) {
   //flex-start  -> start
   //flex-end -> end
@@ -20,6 +22,8 @@ $flex-map: (
   //   @if ($key == between) {
   //     @return space-between;
   //   }
+  // 위와같이 if 문을 다 적어도 되지만, 더 간다하게 하고싶으면, map 을 사용하자!
+
   @return map-get($flex-map, $key);
 }
 
