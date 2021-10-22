@@ -20,7 +20,6 @@
     a {
       display: block;
       padding: $padding;
-      background: pink;
       @include text-style(18, $primary);
       font-weight: 700;
     }
