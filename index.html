@@ -79,6 +79,7 @@
                   <i class="ic-search" arial-hidden></i>
                 </div>
 
+                <!-- NOTE :: 로그인 했을 경우 -->
                 <div class="button-group">
                   <button
                     class="gnb-icon-button is-search lg-hidden"
@@ -122,6 +123,31 @@
                     </div>
                   </button>
                 </div>
+                <!-- // -->
+
+                <!-- NOTE :: 로그인 하지 않았을 경우 -->
+                <div class="button-group">
+                  <button
+                    class="gnb-icon-button is-search lg-hidden"
+                    type="button"
+                    aria-label="검색 열기 버튼"
+                  >
+                    <i class="ic-search"></i>
+                  </button>
+                  <a
+                    href="/"
+                    class="gnb-icon-button is-cart"
+                    arial-label="장바구니 페이지로 이동, 999개의 상품이 장바구니에 담겨있습니다."
+                  >
+                    <i class="ic-cart"></i>
+                    <strong class="badge">999</strong>
+                  </a>
+                  <div class="gnb-auth sm-hidden">
+                    <a href="/">로그인</a>
+                    <a href="/">회원가입</a>
+                  </div>
+                </div>
+                <!-- // -->
 
                 <button class="btn-primary btn-40 sm-hidden" type="button">
                   글쓰기<i class="ic-chevron" aria-hidden=""></i>
