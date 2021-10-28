@@ -2,6 +2,10 @@
   display: block;
   overflow: hidden;
   border-radius: 50%;
+  background-image: url('./assets/images/img-user-default.png');
+  background-position: center center;
+  background-size: contain;
+  border-radius: 50%;
 
   img {
     display: block;
