@@ -1,5 +1,16 @@
 # 내일의집
 
+### 0. 해상도 별 class
+
+| mobile | tablet | desktop | class      |
+| ------ | ------ | ------- | ---------- |
+| O      | X      | X       | .sm-only   |
+| O      | O      | X       | .lg-hidden |
+| X      | X      | X       | .md-only   |
+| X      | O      | O       | .sm-hidden |
+| X      | X      | O       | .lg-only   |
+| O      | X      | O       | .md-hidden |
+
 ### 1.GNB
 
 - 로그인을 하지 않은경우
@@ -73,13 +84,28 @@
 </div>
 ```
 
-### 2. 해상도 별 class
+### 2. sidebar
 
-| mobile | tablet | desktop | class      |
-| ------ | ------ | ------- | ---------- |
-| O      | X      | X       | .sm-only   |
-| O      | O      | X       | .lg-hidden |
-| X      | X      | X       | .md-only   |
-| X      | O      | O       | .sm-hidden |
-| X      | X      | O       | .lg-only   |
-| O      | X      | O       | .md-hidden |
+- 로그인을 하지 않은경우
+
+```html
+<div class="sidebar-auth">
+  <a href="/" class="btn-40 btn-outlined">로그인</a>
+  <a href="/" class="btn-40 btn-primary">회원가입</a>
+</div>
+```
+
+- 로그인을 했을 경우
+
+```html
+<div class="sidebar-user">
+  <a href="/">
+    <div class="avatar-24">
+      <!-- <img src="./assets/images/img-user-01.jpg" alt="사달라아저씨" /> -->
+    </div>
+    <strong class="user-name"
+      >사딸라사딸라사딸라사딸라사딸라사딸라사딸라</strong
+    >
+  </a>
+</div>
+```
